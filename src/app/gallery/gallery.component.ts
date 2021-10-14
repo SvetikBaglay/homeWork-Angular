@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../image.service';
 
 
@@ -9,12 +9,17 @@ import { ImageService } from '../image.service';
 })
 export class GalleryComponent implements OnInit {
   images: any[] = []; 
+  selectedImage = '';
 
   constructor(private imageService: ImageService) {
     this.images = this.imageService.getAllImages();
-   }
+  }
 
-  ngOnInit() {
+  handleImage(id: string) {
+    this.selectedImage = id;
+  }
+
+   ngOnInit() {
     
   }
 
