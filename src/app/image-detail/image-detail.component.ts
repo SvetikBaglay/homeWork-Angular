@@ -11,7 +11,7 @@ export class ImageDetailComponent implements OnInit {
 
 
 constructor(private imageService: ImageService) {
-
+  
  }
 
   ngOnInit(): void {

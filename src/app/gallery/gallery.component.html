@@ -1,5 +1,16 @@
 <div class="gallery">
   <ul class="gallery js-gallery">
-   <app-image-detail *ngFor="let image of images"></app-image-detail>
+    <li *ngFor="let image of images" class="gallery__item">
+      <a
+        class="gallery__link"
+        href="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg">
+        <img
+          class="gallery__image"
+          src="{{image.preview}}"
+          data-source="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
+          alt="Tulips"
+        />
+      </a>
+    </li>
   </ul>
 </div>
