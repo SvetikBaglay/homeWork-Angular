@@ -1,3 +1,19 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class ImageService {
+ images: {preview: string, original: string, description: string}[] = [];
+
+ getAllImages() {
+   return this.images = galleryItems.slice(0)
+ }
+ getImage() {}
+  
+}
+
 const galleryItems = [
   {
     preview:
