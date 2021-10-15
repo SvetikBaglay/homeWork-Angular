@@ -15,8 +15,11 @@ export class GalleryComponent implements OnInit {
     this.images = this.imageService.getAllImages();
   }
 
-  handleImage(id: string) {
+  handleClick(event: Event, id: string) {
+    console.log('test: ', id);
+    console.log('event: ', event);
     this.selectedImage = id;
+    event.preventDefault();
   }
 
    ngOnInit() {

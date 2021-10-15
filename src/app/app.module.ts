@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageService } from './image.service';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ImageDetailComponent } from './image-detail/image-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]
