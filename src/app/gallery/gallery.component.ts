@@ -10,15 +10,15 @@ import { ImageService } from '../image.service';
 export class GalleryComponent implements OnInit {
   images: any[] = []; 
   selectedImage = '';
+  
 
   constructor(private imageService: ImageService) {
     this.images = this.imageService.getAllImages();
   }
 
   handleClick(event: Event, id: string) {
-    console.log('test: ', id);
-    console.log('event: ', event);
     this.selectedImage = id;
+    console.log('selectedImage: ', this.selectedImage);
     event.preventDefault();
   }
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ImageService } from '../image.service';
-import {ActivatedRoute} from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Gallery, ImageService, galleryItems } from '../image.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-image-detail',
@@ -8,19 +8,23 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
-  image: any;
+  image: Gallery | undefined;
 
-constructor(private imageService: ImageService, 
-            private route: ActivatedRoute) {}
+  constructor(private activateRoute: ActivatedRoute,
+              private router: Router,) {}
 
- 
-showOriginImage(){
-    
-}
-
+  closeImage(event: Event){
+    this.router.navigate(['/gallery'])
+  }
 
   ngOnInit() {
-    this.image = this.imageService.getImage(this.route.snapshot.params['id'])
-  }
+  //  this.imageService.getImage(this.activateRoute.snapshot.params['id'])
+  //    console.log('this.image: ', this.imageService.getImage(this.activateRoute.snapshot.params['id']));
+    const routeParams = this.activateRoute.snapshot.paramMap;
+    const imageIdFromRoute = Number(routeParams.get('id'));
+
+    this.image = galleryItems.find((image) => image.id === imageIdFromRoute);
+    console.log('this.image: ', this.image)
+}
 
 }

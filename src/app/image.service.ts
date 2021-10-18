@@ -5,20 +5,22 @@ import { Injectable } from "@angular/core";
 })
 
 export class ImageService {
- images: {id: string, preview: string, original: string, description: string}[] = [];
+//  images: {id: number, preview: string, original: string, description: string}[] = [];
+
+  images = galleryItems
 
  getAllImages() {
    return this.images = galleryItems.slice(0)
  }
- getImage(id: string) {
-   return this.images.slice(0).find(image => image.id == id)
- }
+//  getImage(id: number) {
+//    return this.images.slice(0).find(image => image.id == id)
+//  }
   
 }
 
-const galleryItems = [
+export const galleryItems = [
   {
-    id: '1',
+    id: 1,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
     original:
@@ -26,7 +28,7 @@ const galleryItems = [
     description: 'Hokkaido Flower',
   },
   {
-    id: '2',
+    id: 2,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
     original:
@@ -34,7 +36,7 @@ const galleryItems = [
     description: 'Container Haulage Freight',
   },
   {
-    id: '3',
+    id: 3,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
     original:
@@ -42,7 +44,7 @@ const galleryItems = [
     description: 'Aerial Beach View',
   },
   {
-    id: '4',
+    id: 4,
     preview:
       'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
     original:
@@ -50,7 +52,7 @@ const galleryItems = [
     description: 'Flower Blooms',
   },
   {
-    id: '5',
+    id: 5,
     preview:
       'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
     original:
@@ -58,7 +60,7 @@ const galleryItems = [
     description: 'Alpine Mountains',
   },
   {
-    id: '6',
+    id: 6,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
     original:
@@ -66,7 +68,7 @@ const galleryItems = [
     description: 'Mountain Lake Sailing',
   },
   {
-    id: '7',
+    id: 7,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
     original:
@@ -74,7 +76,7 @@ const galleryItems = [
     description: 'Alpine Spring Meadows',
   },
   {
-    id: '8',
+    id: 8,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
     original:
@@ -82,7 +84,7 @@ const galleryItems = [
     description: 'Nature Landscape',
   },
   {
-    id: '9',
+    id: 9,
     preview:
       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
     original:
@@ -90,3 +92,10 @@ const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+export interface Gallery {
+  id: number;
+  preview: string;
+  original: string;
+  description: string; 
+}
